@@ -99,6 +99,7 @@ SECRET_KEY = ')tbe)ly!(5!lu2#^o0)tcy1jzmxz7rwa*=j6%9i-mt!bq^2b55'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
+    'app_namespace.Loader',
 #     'django.template.loaders.eggs.Loader',
 )
 
@@ -170,6 +171,7 @@ INSTALLED_APPS = (
     'reversion',
     'tagging',
     'mptt',
+    'zinnia_bootstrap',
     'zinnia',
 )
 

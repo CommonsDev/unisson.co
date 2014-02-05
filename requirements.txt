@@ -26,3 +26,7 @@ djangocms-text-ckeditor
 #Zinnia Blog
 django-blog-zinnia==0.14
 django-tagging==0.3.1
+
+#Zinnia Bootstrap
+zinnia-theme-bootstrap
+django-app-namespace-template-loader
