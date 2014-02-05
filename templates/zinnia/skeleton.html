@@ -1,0 +1,117 @@
+{% load i18n staticfiles %}
+<!doctype html>
+{% load menu_tags %}
+
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Unisson's Blog - {% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %}</title>
+    <meta name="robots" content="follow, all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{% block meta-description %}{% trans "Just another Zinnia weblog." %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
+    <meta name="keywords" content="{% block meta-keywords %}django, blog, weblog, zinnia{% endblock meta-keywords %}" />
+    <meta name="author" content="Fantomas42" />
+    {% block meta %}{% endblock meta %}
+    <link rel="pingback" href="/xmlrpc/" />
+    <link rel="home" href="{% url 'zinnia_entry_archive_index' %}" />
+    <link id="callCss" rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
+    <link id="callCss" rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "zinnia_bootstrap/bootstrap/css/bootstrap.min.css" %}" />
+    <style type="text/css">
+    *, *:before, *:after {
+    -webkit-box-sizing: initial !important;
+    } 
+    .navbar {
+    margin-bottom: -14px;
+    }
+    </style>
+
+
+  
+    <!--[if lt IE 9]>
+        <script src="{% static "zinnia_bootstrap/assets/js/html5shiv.js" %}"></script>
+        <script src="{% static "zinnia_bootstrap/assets/js/respond.min.js" %}"></script>
+    <![endif]-->
+    {% block link %}{% endblock link %}
+    {% block script %}{% endblock script %}
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar">
+      <!-- navbar -->
+  <div id="carouselSection" class="cntr"> 
+  </div>
+  <div id="headerSection">
+  <div class="container">
+    <h1 class="brand cntr"><img src="{{ STATIC_URL }}images/unisson.png" width="200px" alt=""> </h1>
+    <div class="navbar">
+      <div class="nav-collapse">
+        <ul class="nav">
+          {% show_menu 0 100 100 100 %}
+        </ul>
+      </div>
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+  </div>
+  </div>
+
+
+
+  <body class="zinnia {% block body-class %}{% endblock body-class %}">
+   
+    {% block slider %}{% endblock %}
+    <div class="container">
+      <div class="row">
+        <div id="content" class="hfeed col-xs-12 col-sm-8 col-md-8 col-lg-8">
+          {% block breadcrumbs %}{% endblock %}
+          {% block content %}
+          <div class="links">
+            <h3>{% trans "Useful links" %}</h3>
+            <ul>
+              <li>
+                <a href="{% url 'zinnia_entry_archive_index' %}" title="{% trans "Weblog index" %}">
+                  {% trans "Weblog index" %}
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'zinnia_sitemap' %}" title="{% trans "Sitemap" %}">
+                  {% trans "Sitemap" %}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="search">
+            <h3>{% trans "Search" %}</h3>
+            {% include "zinnia/tags/search_form.html" %}
+          </div>
+          {% endblock content %}
+        </div>
+        <div id="sidebar" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          {% block sidebar %}
+          {% endblock sidebar %}
+        </div>
+      </div>
+    </div>
+
+     <div id="footerSection">
+  <div class="container">
+  <div class="socialMedia">
+    <a class="facebook" href="http://facebook.com/unisson.co"></a>
+    <a class="twitter" href="https://twitter.com/unissonco"></a>
+  </div>
+  <div id="footerMenu">
+     <a href="accueil">accueil</a>
+  </div>
+    <p><small>www.unisson.co - </small><small> Unisson est financé
+  par vos contributions financières, via un <a href="http://gittip.com/unissonco/members">système de répartition</a> transparent et volontaire - <a href="http://gittip.com/unissonco"><img src="http://img.shields.io/gittip/unissonco.svg"></a></small></p>
+  </div>
+</div>
+<a href="#" class="go-top" style="display: none;"><i class="icon-double-angle-up"></i></a>
+
+  </body>
+</html>

@@ -10,8 +10,6 @@
     <link id="callCss" rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
 	<link id="callCss" rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen" charset="utf-8" />
 	<link href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="{{ STATIC_URL }}font-awesome/css/font-awesome.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     {% render_block "css" %}
   </head>
 
@@ -72,12 +70,7 @@
 		<a class="twitter" href="https://twitter.com/unissonco"></a>
 	</div>
 	<div id="footerMenu">
-		   {% if request.current_page.is_home  %}
-             {% comment %}LANGUAGE FALLBACK DOESN'T CURRENTLY WORK WITH OR{% placeholder "footer-resources" or %}{% trans "Please fill the footer-resources section in the home page's admin page." %}{% endplaceholder %}{% endcomment %}
-                {% placeholder "footer-resources" %}
-                {% else %}
-                {% show_placeholder "footer-resources" "homepage" %}
-                {% endif %}
+		 <a href="/">Accueil</a>
 	</div>
 		<p><small>www.unisson.co - </small><small> Unisson est financé
   par vos contributions financières, via un <a href="http://gittip.com/unissonco/members">système de répartition</a> transparent et volontaire - <a href="http://gittip.com/unissonco"><img src="http://img.shields.io/gittip/unissonco.svg"></a></small></p>
