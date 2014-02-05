@@ -25,4 +25,3 @@ djangocms-text-ckeditor
 #Zinnia Blog
 django-blog-zinnia==0.14
 django-tagging==0.3.1
-Pillow==1.7.4
