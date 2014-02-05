@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load sekizai_tags %}
+{% load cms_tags %}  
+
+{% block content %}
+
+    <div class="container">
+		 <div class="row">
+			<div class="span9">
+        {% placeholder "Body" or %}
+			<h1 class="cntr">Exemples de biens communs soutenus</h1>
+				<ul class="nav nav-pills">
+				<li class="active"><a href="#all" data-toggle="tab">Tiers-Lieux</a></li>
+				<li class=""><a href="#new" data-toggle="tab">Plateformes</a></li>
+				<li class=""><a href="#popular" data-toggle="tab">Machines</a></li>
+				<li class=""><a href="#comingsoon" data-toggle="tab">Communautés apprenantes</a></li>
+				</ul>
+			<div class="clr"></div>
+			<div class="tabbable tabs">
+			<div class="tab-content label-primary">
+				<div class="tab-pane active" id="all">
+				<ul class="thumbnails">
+					<li class="span3">
+						<div class="thumbnail">
+							<div class="blockDtl">
+							<a href="http://imaginationforpeople.org/fr/project/la-coroutine/"><img src="http://imaginationforpeople.org/site_media/uploads/projects/179/pictures/5c96977b-532f-4f33-b3a4-eeb24472120c.jpg.620x300_q85_crop-50%2C50_upscale-1.jpg" alt=""></a>
+							<h4>La Coroutine</h4>
+							<p>Espace de coopération pour passionnés</p>
+							</div>
+						</div>
+					</li>
+				  </ul>		
+				</div>
+				<div class="tab-pane" id="new">
+				<ul class="thumbnails">
+					<li class="span3">
+						<div class="thumbnail">
+							<div class="blockDtl">
+							<a href="http://imaginationforpeople.org/fr/project/imagination-for-people/"><img src="http://imaginationforpeople.org/site_media/uploads/projects/47/pictures/d22523c0-f340-4ee6-9c46-b483620f97a3.png.620x300_q85_crop-50%2C50_upscale-1.jpg" alt=""></a>
+							<h4>ImaginationforPeople</h4>
+							<p>Repérer et soutenir les projets sociaux créatifs.</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+				</div>
+				<div class="tab-pane" id="popular">
+				<ul class="thumbnails">
+				<li class="span3">
+					<div class="thumbnail">
+						<div class="blockDtl">
+						<a href="http://imaginationforpeople.org/fr/project/la-meuhchine/"><img src="http://imaginationforpeople.org/site_media/uploads/projects/3009/pictures/ac40c83a-ecbe-4cd2-aae9-db671d7d828e.png.620x300_q85_crop-50%2C50_upscale-1.jpg" alt=""></a>
+						<h4>La Meuchine</h4>
+						<p>Fraiseuse numérique libre - CNC</p>
+						</div>
+					</div>
+					</li>
+					</ul>
+				
+
+				</div>
+				<div class="tab-pane" id="comingsoon">
+				<ul class="thumbnails">
+				<li class="span3">
+					<div class="thumbnail">
+						<div class="blockDtl">
+						<a href="http://lille-makers.org/"><img src="http://imaginationforpeople.org/site_media/uploads/groups/fablab-fr/pictures/cover._3.jpg.960x300_q85_crop.jpg" alt=""></a>
+						<h4>Lille Makers</h4>
+						<p>Repérer et soutenir les projets sociaux créatifs.</p>
+						</div>
+					</div>
+					</li>
+					<li class="span3">
+					<div class="thumbnail">
+						<div class="blockDtl">
+						<a href="http://catalyst-initiative.org"><img src="http://imaginationforpeople.org/site_media/uploads/projects/47/pictures/d22523c0-f340-4ee6-9c46-b483620f97a3.png.620x300_q85_crop-50%2C50_upscale-1.jpg" alt=""></a>
+						<h4>Catalyst-initiative</h4>
+						<p>Soutien à l'innovation sociale et numérique à Lille.</p>
+						</div>
+					</div>
+					</li>
+				</ul>
+				
+
+				</div>
+			</div>
+			</div>
+			</div>
+			<!-- ========================= -->
+        {% endplaceholder %}
+
+			</div>	
+			<div class="span3">
+			</div>
+		</div>
+    </div>
+    
+{% endblock %}
+

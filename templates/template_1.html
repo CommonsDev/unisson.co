@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load sekizai_tags %}
+{% load cms_tags %}  
+
+{% block content %}
+
+    <div class="container">
+		 <div class="row">
+			
+		
+			<div class="span9">
+        {% placeholder "Body" or %}
+        {% trans "There is no content yet. Switch to edit mode and add a widget." %}
+        {% endplaceholder %}
+			</div>	
+			<div class="span3">
+			</div>
+		</div>
+    </div>
+    
+{% endblock %}

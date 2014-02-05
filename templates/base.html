@@ -1,0 +1,116 @@
+{% load i18n %}
+{% load cms_tags sekizai_tags %}
+{% load menu_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unisson.co - {% trans "Common Good Framework" %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link id="callCss" rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
+	<link id="callCss" rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen" charset="utf-8" />
+	<link href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{{ STATIC_URL }}font-awesome/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    {% render_block "css" %}
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar">
+    {% cms_toolbar %}
+    <!-- navbar -->
+	<div id="carouselSection" class="cntr"> 
+	<!--	<div id="myCarousel" class="carousel slide">
+			<div class="carousel-inner">
+				<div class="item active">
+					<a class="cntr" href="#"><img src="themes/images/schema.png" alt=""></a>
+				</div>
+				<div class="item">
+					<a class="cntr" href="#"><img src="themes/images/carousel/2.png" alt=""></a>
+				</div>
+				<div class="item">
+					<a class="cntr" href="#"><img src="themes/images/carousel/3.png" alt=""></a>
+				</div>
+				<div  class="item">
+					<a class="cntr" href="#"><img src="themes/images/carousel/4.png" alt=""></a>
+				</div>
+				<div class="item">
+					<a class="cntr" href="#"><img src="themes/images/carousel/5.png" alt=""></a>
+				</div>
+			</div>
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		</div>
+		-->
+	</div>
+	<div id="headerSection">
+	<div class="container">
+		<h1 class="brand cntr"><img src="{{ STATIC_URL }}images/unisson.png" width="200px" alt=""> </h1>
+		<div class="navbar">
+			<div class="nav-collapse">
+				<ul class="nav">
+					{% show_menu 0 100 100 100 %}
+				</ul>
+			</div>
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+	</div>
+	</div>
+
+ 	{% block content %}
+    <h1>Hello, world!</h1>
+
+     {% endblock %}
+
+ <div id="footerSection">
+	<div class="container">
+	<div class="socialMedia">
+		<a class="facebook" href="http://facebook.com/unisson.co"></a>
+		<a class="twitter" href="https://twitter.com/unissonco"></a>
+	</div>
+	<div id="footerMenu">
+		   {% if request.current_page.is_home  %}
+             {% comment %}LANGUAGE FALLBACK DOESN'T CURRENTLY WORK WITH OR{% placeholder "footer-resources" or %}{% trans "Please fill the footer-resources section in the home page's admin page." %}{% endplaceholder %}{% endcomment %}
+                {% placeholder "footer-resources" %}
+                {% else %}
+                {% show_placeholder "footer-resources" "homepage" %}
+                {% endif %}
+	</div>
+		<p><small>www.unisson.co - </small><small> Unisson est financé
+  par vos contributions financières, via un <a href="http://gittip.com/unissonco/members">système de répartition</a> transparent et volontaire - <a href="http://gittip.com/unissonco"><img src="http://img.shields.io/gittip/simons_fr.svg"></a></small></p>
+	</div>
+</div>
+<a href="#" class="go-top" style="display: none;"><i class="icon-double-angle-up"></i></a>
+
+
+<!-- Javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+<script src="{{ STATIC_URL }}js/jquery-1.9.1.min.js"></script>
+<script src="{{ STATIC_URL }}js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/jquery.easing-1.3.min.js"></script>
+<script src="{{ STATIC_URL }}js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script src="{{ STATIC_URL }}js/default.js"></script> 
+<script type="text/javascript">
+
+	$('#testimonial').carousel({
+	  interval: 10000
+	})
+	$('#myCarousel').carousel({
+	  interval: 7000
+	})
+</script>
+
+{% render_block "js" %}
+
+
+
+
+
+  </body>
+</html>
