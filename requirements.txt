@@ -1,6 +1,6 @@
 # Bare minimum
 django-cms==3.0.0.beta3
-
+https://github.com/divio/django-cms/archive/3.0.0.beta3.zip
 
 #These dependencies are brought in by django CMS, but if you want to lock-in their version, specify them
 Django==1.6.1
