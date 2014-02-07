@@ -45,7 +45,7 @@ font-weight: bold;}
 .blockDtl:hover{color:#FE5214}
 #shadow{background:url(../images/shadow.png) no-repeat center bottom #fff; min-height:44px; padding:18px 0; text-align:center}
 
-#carouselSection{ margin:0 auto; background:url(../images/shadowsReverse.png) no-repeat center bottom #fff; padding: 95px 0 31px; color:#eee;}
+#carouselSection{ margin:0 auto; background:url(../images/shadowsReverse.png) no-repeat center bottom #fff; padding: 68px 0 31px; color:#eee;}
 #carouselSection #myCarousel{margin-bottom:0}
 #myCarousel .carousel .item {-webkit-transition: opacity 3s; -moz-transition: opacity 3s; -ms-transition: opacity 3s; -o-transition: opacity 3s; transition: opacity 3s;}
 #myCarousel .carousel .active.left {left:0;opacity:0;z-index:2;}
