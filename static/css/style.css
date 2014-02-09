@@ -29,7 +29,7 @@ h1.brand {padding: 0;height: 75px;padding-top: 75px;margin: -104px auto 0;width:
 .nav li{display:inline-block; float:none;}
 .nav a {padding: 3px 18px; text-transform: uppercase;font-size: 14px; display: inline-block; color:#222; font-family: "Open Sans",Arial,Helvetica,sans-serif;
 font-weight: bold;}
-.nav.pull-right { margin-top: -42px;}
+.nav.pull-right { margin-top: -45px;}
 .navbar .nav>li>a:hover { color: #333; text-decoration: none; background-color: transparent;}
 .navbar .nav>li>a {color: #777;}
 
