@@ -39,70 +39,11 @@
 		</div>
 		-->
 	</div>
-	
-	<div id="headerSection">
-	<div class="container">
+	 {% block header %}{% include "header.html" %}{% endblock %}
+  {% block central_content_zone %}
+        {% block content %}{% endblock %}
+      {% endblock %}
 
-		<nav class="navbar" role="navigation">
-  		<div class="container-fluid">
-    	<!-- Brand and toggle get grouped for better mobile display -->
-    	<div class="navbar-header">
-      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-     	 </button>
-     	 <a class="navbar-brand" href="#">Unisson</a>
-    	</div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-     		 <ul class="nav navbar-nav">
-    	    	{% show_menu 0 100 100 100 %}
-    		  </ul>    
-    		   <ul class="nav pull-right">	      
-	      <!--
-              <form class="navbar-search pull-left" action="">
-		<input type="text" class="search-query span2" placeholder="{% trans "Search people" %}">
-              </form>
-	      -->
-              <li class="divider-vertical"></li>
-	      {% if not user.is_anonymous %}
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i>&nbsp;{{ user.get_profile.get_full_name_or_username}} <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="{% url 'profile-detail' user.username %}">{% trans "My profile" %}</a></li>
-		  {% if user.is_staff %}
-		  <li class="divider"></li>
-		  <li><a href="{% url 'admin:index' %}">{% trans "Administration" %}</a></li>
-		  {% endif %}
-                  <li class="divider"></li>
-                  <li><a href="{% url 'userena_signout' %}">{% trans "Logout" %}</a></li>
-                </ul>
-              </li>
-	      {% else %}
-	 <!--     <li>
-		<a rel="nofollow" href="{% url 'socialauth_begin' 'google-oauth2' %}"><img width="20px" src="{{ STATIC_URL }}images/google_login_icon.png" alt="Google"></a>
-	      </li>
-	      <li>
-		<a rel="nofollow" href="{% url 'socialauth_begin' 'facebook' %}"><img width="20px" src="{{ STATIC_URL }}images/facebook_login_icon.png" alt="Facebook"></a>
-	      </li>
-	  -->
-	      {% endif %}
-            </ul>  
-    
-    	</div><!-- /.navbar-collapse -->
-  		</div><!-- /.container-fluid -->
-		</nav>
-
-	</div>
-	</div>
-
- 	{% block content %}
-    <h1>Hello, world!</h1>
-
-     {% endblock %}
 
  <div id="footerSection">
 	<div class="container">
@@ -141,10 +82,6 @@
 </script>
 
 {% render_block "js" %}
-
-
-
-
 
   </body>
 </html>
