@@ -124,6 +124,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.media',
     'django.core.context_processors.static',
+    'social_auth.context_processors.social_auth_by_name_backends',
+    'social_auth.context_processors.social_auth_backends',
+    'social_auth.context_processors.social_auth_by_type_backends',
+    'social_auth.context_processors.social_auth_login_redirect',   
     'cms.context_processors.media',
     'sekizai.context_processors.sekizai',
     'zinnia.context_processors.version',  # Optional
@@ -138,7 +142,9 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_DIR, '..', 'accounts/templates'),
     os.path.join(PROJECT_DIR, '..', 'templates'),
+
 )
 
 INSTALLED_APPS = (
@@ -153,6 +159,11 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'guardian',
+    'easy_thumbnails',
+    'userena',
+    'accounts',
+    'social_auth',
     'djangocms_text_ckeditor',  # note this needs to be above the 'cms' entry
     'cms',  # django CMS itself
     'mptt',  # utilities for implementing a modified pre-order traversal tree
@@ -173,6 +184,21 @@ INSTALLED_APPS = (
     'mptt',
     'zinnia_bootstrap',
     'zinnia',
+    'django_mailman',
+    'group',
+)
+
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
+    'social_auth.backends.google.GoogleOAuthBackend',        
+    'social_auth.backends.google.GoogleBackend',    
+    'social_auth.backends.browserid.BrowserIDBackend',
+    
+    'userena.backends.UserenaAuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -204,6 +230,18 @@ LOGGING = {
     }
 }
 
+# USERENA
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/signin/'
+LOGOUT_URL = '/signout/?next=/'
+USERENA_DEFAULT_PRIVACY = 'open'
+USERENA_MUGSHOT_SIZE = 120
+USERENA_MUGSHOT_DEFAULT = 'monsterid'
+
+ANONYMOUS_USER_ID = -1
+AUTH_PROFILE_MODULE = 'accounts.Profile'
+
+
 CMS_TEMPLATES = (
     ('template_1.html', 'Template One'),
     ('projets.html', 'Projets'),
@@ -211,3 +249,6 @@ CMS_TEMPLATES = (
     ('contact.html', 'Contact'),
     ('faq.html', 'faq'),
 )
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

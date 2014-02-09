@@ -25,11 +25,14 @@ h1.brand {padding: 0;height: 75px;padding-top: 75px;margin: -104px auto 0;width:
 .clr{clear:both}
 .cntr{text-align:center}
 .navbar{margin-bottom:-1px; margin-top:8px; position:relative }
-.navbar .nav, .navbar .nav > li{float:none; text-align:center}
+.navbar-nav, .navbar-nav > li{float:none; text-align:center}
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {color: #000;text-decoration: none;background-color: transparent; -webkit-box-shadow:  0 0 0;-moz-box-shadow:  0 0 0;box-shadow: 0 0 0;border-bottom: 2px solid #F83200;}
 .nav li{display:inline-block; float:none;}
 .nav a {padding: 3px 18px; text-transform: uppercase;font-size: 14px; display: inline-block; color:#222; font-family: "Open Sans",Arial,Helvetica,sans-serif;
 font-weight: bold;}
+.nav.pull-right { margin-top: -50px;}
+.navbar .nav>li>a:hover { color: #333; text-decoration: none; background-color: transparent;}
+.navbar .nav>li>a {color: #777;}
 
 #contactSection, #portfolioSection, #ourServices, #blogSection{padding:130px 0 44px; }
 .txtR{text-align:right}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load sekizai_tags %}
+
+{% block title %}{% blocktrans with profile.user.username as username %}{{ username }}'s profile.{% endblocktrans %}{% endblock %}
+{% block content_title %}<h2>{{ profile.user.username }} {% if profile.user.get_full_name %}({{ profile.user.get_full_name }}){% endif %}</h2>{% endblock %}
+
+{% block content %}
+<div class="container">
+
+{% addtoblock 'js' %}
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.popinfo').popover({placement: 'top', trigger: 'hover', html: true});
+  $('.tipinfo').tooltip({placement: 'top'});
+});
+</script>
+{% endaddtoblock %}
+  <div class="row">
+    <div class="span9">
+      <div class="media">
+	<a class="pull-left" href="#">
+	  <img class="media-object" src="{{ profile.get_mugshot_url }}">
+	</a>
+	<div class="media-body">
+	  <div class="page-header">
+	    <h1>{{ profile.get_full_name_or_username }} <small> {{ profile.location|default:"Earth" }}</small></h1>
+	  </div>
+
+	</div>
+      </div>
+
+      <!-- buttons -->
+   
+    
+      
+
+    </div> <!-- .span9 -->
+
+    <div class="span3">	
+	<div class="well">
+	  <h4>{% trans "About me" %}</h4>
+	  <p>
+	  {{ profile.about|default:"I'm a human being." }}
+	  </p>
+
+	  <!--
+	  <span class="badge badge-inverse">10</span> 
+	  <a class="btn btn-small" href="#"><i class="icon-star-empty"></i> {% trans "Endorse" %}</a>
+	  -->
+
+	  <hr/>
+	  <p>
+	  {% if profile.location or profile.twitter %}
+	    <i class="icon-home"></i>
+	  {% endif %}
+	  {% if profile.location %}
+	  <a href="{{ profile.website }}">{% trans "Website" %}</a>
+	  {% endif %}
+	  {% if profile.location and profile.twitter %}
+	  |
+	  {% endif %}
+	  {% if profile.twitter %}	  
+	  <a href="https://twitter.com/{{ profile.twitter }}">@{{ profile.twitter }}</a>
+	  {% endif %}
+	  </p>
+	</div>
+	
+
+	<div>
+	  <a class="btn btn-info btn-block" 
+	     href="http://twitter.com/share?url={{ request.build_absolute_uri|urlencode }}&text={{ "Discover my way of life on @coackme !"|urlencode }}&related=&count=vertical&lang=en"
+	     target="popup">
+	    {% trans "Share this profile on" %} <i class="entypo-twitter"></i>
+	  </a>
+	</div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -30,3 +30,8 @@ django-tagging==0.3.1
 #Zinnia Bootstrap
 zinnia-theme-bootstrap
 django-app-namespace-template-loader
+
+-e git://github.com/SimonSarazin/django-mailman.git#egg=django-mailman
+
+django-userena==1.2.1
+django-social-auth
