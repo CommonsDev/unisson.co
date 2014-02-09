@@ -31,7 +31,17 @@ $(document).ready(function() {
       </div>
 
       <!-- buttons -->
-   
+  
+      {% if profile.user == user %}
+      <div class="row">
+	<div class="offset5 span4">
+	  <div class="pull-right">
+	    <a class="btn btn-default btn-warning btn-sm" href="{% url 'profile-edit' user.username %}"><span class="glyphicon glyphicon-edit"></span><i class="icon-edit"></i>&nbsp;{% trans "edit your profile"|capfirst %}</a>
+	  </div>
+	  <br><br>
+	</div>
+      </div>
+      {% endif %}
     
       
 

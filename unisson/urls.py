@@ -10,24 +10,18 @@ from .views import RootRouter
 
 admin.autodiscover()
 
+
 urlpatterns = i18n_patterns('',
-    url(r'^home$', TemplateView.as_view(template_name='base.html'), name='home'),
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include('zinnia.urls')),
+    url(r'^', include('cms.urls')),
+)
+
+urlpatterns += patterns('',
+    url(r'^admin/', include(admin.site.urls)),
 	url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^', include('social_auth.urls')),    
     url(r'^', include('accounts.urls')),  
 )
 
-urlpatterns += i18n_patterns('',
-    url(r'^', include('cms.urls')),
-)
-
 if settings.DEBUG:
-    urlpatterns = patterns('',
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-    url(r'', include('django.contrib.staticfiles.urls')),
-) + urlpatterns
-
-
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
