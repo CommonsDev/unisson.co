@@ -188,6 +188,11 @@ INSTALLED_APPS = (
     'group',
 )
 
+CKEDITOR_SETTINGS = {
+    'toolbar': 'full',
+}
+
+TEXT_ADDITIONAL_ATTRIBUTES = ('data-toggle', 'data-parent')
 
 AUTHENTICATION_BACKENDS = (
     'social_auth.backends.facebook.FacebookBackend',
