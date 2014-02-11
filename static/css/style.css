@@ -32,6 +32,7 @@ h1.brand {padding: 0;height: 75px;padding-top: 75px;margin: -104px auto 0;width:
 font-weight: bold; }
 .navbar .nav>li>a:hover { color: #333; text-decoration: none; background-color: transparent;}
 .navbar .nav>li>a {color: #777;}
+.pull-right {margin-top: 8px;}
 .navbar-default {background-color: transparent; border-color: transparent;}
 #contactSection, #portfolioSection, #ourServices, #blogSection{padding:130px 0 44px; }
 .txtR{text-align:right}
