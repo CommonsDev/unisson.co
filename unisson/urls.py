@@ -10,8 +10,9 @@ from .views import RootRouter
 
 admin.autodiscover()
 
+
 urlpatterns = i18n_patterns('',
-	url(r'^', include('workgroup.urls')),
+	url(r'^group/', include('workgroup.urls')),
     url(r'^blog/', include('zinnia.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^', include('cms.urls')),
