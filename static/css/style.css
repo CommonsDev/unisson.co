@@ -34,7 +34,6 @@ font-weight: bold; }
 .navbar .nav>li>a {color: #777;}
 .pull-right {margin-top: 8px;}
 .navbar-default {background-color: transparent; border-color: transparent;}
-#contactSection, #portfolioSection, #ourServices, #blogSection{padding:130px 0 44px; }
 .txtR{text-align:right}
 #blogSection{background: #e6e6e6;}
 #ourServices{background: #e6e6e6;text-align: center;border-top: 1px solid #ddd;}
