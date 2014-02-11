@@ -10,15 +10,15 @@ from .views import RootRouter
 
 admin.autodiscover()
 
-
 urlpatterns = i18n_patterns('',
+	url(r'^', include('workgroup.urls')),
     url(r'^blog/', include('zinnia.urls')),
+    url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^', include('cms.urls')),
 )
 
 urlpatterns += patterns('',
     url(r'^admin/', include(admin.site.urls)),
-	url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^', include('social_auth.urls')),    
     url(r'^', include('accounts.urls')),  
 )

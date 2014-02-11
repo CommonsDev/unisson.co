@@ -135,6 +135,7 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_DIR, '..', 'accounts/templates'),
     os.path.join(PROJECT_DIR, '..', 'templates'),
+    os.path.join(PROJECT_DIR, '..', 'workgroup/templates'),
 
 )
 
@@ -176,7 +177,7 @@ INSTALLED_APPS = (
     'zinnia_bootstrap',
     'zinnia',
     'django_mailman',
-    'group',
+    'workgroup',
 )
 
 CKEDITOR_SETTINGS = {

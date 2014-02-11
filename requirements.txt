@@ -35,3 +35,4 @@ django-app-namespace-template-loader
 
 django-userena==1.2.1
 django-social-auth
+django-autoslug==1.4.1

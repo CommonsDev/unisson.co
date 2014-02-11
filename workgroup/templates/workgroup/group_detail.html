@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load admin_urls %}
+{% load sekizai_tags %}
+{% load guardian_tags %}
+
+
+{% block title %}{% blocktrans with group_name=workgroup.name %}{{ group_name }} group home | Imagination for People{% endblocktrans %}{% endblock %}
+
+{% block content %}
+ 
+<div class="container" id="workgroup-detail">
+     
+     <h1 class="workgroup_title"><a href="{{ workgroup.get_absolute_url }}">Groupe "{{ workgroup.name }}"</a></h1>
+       <span class="workgroup_desc">{{ workgroup.description|urlize }}</span>
+    <h2>Inscription au groupe</h2>
+    {% include "workgroup/block/subscribe_button.html" %}
+
+    <h2>Membres</h2>
+    {% include "workgroup/block/workgroup_subscribers.html" %}
+    
+
+
+    </div>
+    
+{% endblock %}
