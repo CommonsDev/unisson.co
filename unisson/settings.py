@@ -244,8 +244,10 @@ CMS_TEMPLATES = (
     ('projets.html', 'Projets'),
     ('home.html', 'Home'),
     ('contact.html', 'Contact'),
-    ('faq.html', 'faq'),
 )
+
+DEFAULT_FROM_EMAIL = 'contact@unisson.co'
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
