@@ -15,6 +15,7 @@
 	{% csrf_token %}
 	<fieldset>
 	  <legend>{% trans "Edit Profile" %}</legend>
+       <p>Email : <em>{{ user.email }}</em></p>
 	  {{ form.as_p }}
 	</fieldset>
 	<input type="submit" value="{% trans "Save changes" %}" />
