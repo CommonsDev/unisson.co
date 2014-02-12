@@ -45,13 +45,16 @@
                 </ul>
               </li>
 	      {% else %}
-	 <!--     <li>
+          <li>
+    <p class="navbar-text">Se connecter avec :</p>
+        </li>
+	      <li>
 		<a rel="nofollow" href="{% url 'socialauth_begin' 'google-oauth2' %}"><img width="20px" src="{{ STATIC_URL }}images/google_login_icon.png" alt="Google"></a>
 	      </li>
-	      <li>
+	   <!--     <li>
 		<a rel="nofollow" href="{% url 'socialauth_begin' 'facebook' %}"><img width="20px" src="{{ STATIC_URL }}images/facebook_login_icon.png" alt="Facebook"></a>
-	      </li>
-	  -->
+	      </li> -->
+
 	      {% endif %}
             </ul>  
     
