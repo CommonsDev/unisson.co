@@ -184,7 +184,7 @@ CKEDITOR_SETTINGS = {
     'toolbar': 'full',
 }
 
-TEXT_ADDITIONAL_ATTRIBUTES = ('data-toggle', 'data-parent')
+TEXT_ADDITIONAL_ATTRIBUTES = ('data-toggle', 'data-parent', 'original-title')
 
 AUTHENTICATION_BACKENDS = (
     'social_auth.backends.facebook.FacebookBackend',
