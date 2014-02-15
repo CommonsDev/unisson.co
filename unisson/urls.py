@@ -13,6 +13,7 @@ admin.autodiscover()
 
 urlpatterns = i18n_patterns('',
 	url(r'^group/', include('workgroup.urls')),
+	url(r'^project/', include('project.urls')),
     url(r'^blog/', include('zinnia.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^', include('cms.urls')),

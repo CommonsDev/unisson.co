@@ -130,3 +130,15 @@ border-bottom: 0;
 .fa-4{font-size:7em}
 .fa-5{font-size:12em}
 .fa-6{font-size:20em}
+
+.label-primary {
+    background-color: transparent;
+}
+
+.blockDtl h4 {
+font-weight: bold;
+}
+
+.tab-content ul {
+list-style-type: none;
+}
