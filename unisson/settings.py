@@ -253,3 +253,4 @@ DEFAULT_FROM_EMAIL = 'contact@unisson.co'
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
