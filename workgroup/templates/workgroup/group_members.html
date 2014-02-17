@@ -17,7 +17,7 @@
                     <h3>{% blocktrans with group_name=workgroup.name %}The {{ group_name }} group members{% endblocktrans %}</h3>
                     <ul>
                     {% for subscriber in workgroup.subscribers.all %}
-                        <li><a href="{% url 'profile-detail' subscriber.get_profile.user.username %}"><img class="tipsed"  {% if request.user == member %}{% endif %} title="{{ subscriber.first_name }} {{ subscriber.last_name }}" src="{{ subscriber.get_profile.get_mugshot_url }}" width="40px" height="40px"/></a></li>
+                        <li><a href="/{{subscriber.username}}"><img class="tipsed"  {% if request.user == member %}{% endif %} title="{{ subscriber.first_name }} {{ subscriber.last_name }}" src="{{ subscriber.get_profile.get_mugshot_url }}" width="40px" height="40px"/></a></li>
                     {% empty %}
                     {% trans "There are no group subscribers." %}
                     {% endfor %}

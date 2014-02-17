@@ -6,7 +6,7 @@
 <div id="subscribers-list">
   <ul>
     {% for subscriber in workgroup.subscribers.all|slice:":25" %}
-    <li><a href="{% url 'profile-detail' subscriber.get_profile.user.username %}"><img class="tipsed" title="{{ subscriber.first_name }} {{ subscriber.last_name }}" src="{{ subscriber.get_profile.get_mugshot_url }}" width="40px" height="40px"/></a></li>
+    <li><a href="/{{subscriber.username}}"><img class="tipsed" title="{{ subscriber.first_name }} {{ subscriber.last_name }}" src="{{ subscriber.get_profile.get_mugshot_url }}" width="40px" height="40px"/></a></li>
     {% endfor %}
   </ul>
 </div>
