@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 gettext = lambda s: s
+from django.utils.translation import gettext_lazy as _
 PROJECT_DIR = os.path.dirname(__file__)
 # Django settings for unisson project.
 
