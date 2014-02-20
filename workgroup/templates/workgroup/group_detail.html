@@ -4,7 +4,6 @@
 {% load sekizai_tags %}
 {% load guardian_tags %}
 
-
 {% block title %}{% blocktrans with group_name=workgroup.name %}{{ group_name }} group home | Imagination for People{% endblocktrans %}{% endblock %}
 
 {% block content %}
@@ -19,6 +18,11 @@
     <h2>Membres</h2>
     {% include "workgroup/block/workgroup_subscribers.html" %}
     
+
+     {% if workgroup.mailing_list %}
+             <em class="workgroup_email">{% blocktrans with ml_address=workgroup.mailing_list.email %}This group uses a mailing list:&nbsp;</em>{{ ml_address }}{% endblocktrans %}</em> - [<a class="workgroup_archive" href="{% url 'workgroup-list-archive' workgroup.slug %}">{% trans "Find history of messages exchanged" %}</a>].
+     {% endif %}
+        
 
 
     </div>
