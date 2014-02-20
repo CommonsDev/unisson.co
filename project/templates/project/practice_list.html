@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load admin_urls %}
+{% load sekizai_tags %}
+{% load guardian_tags %}
+
+{% block title %}{% blocktrans with project_name=project.name %}{{ project_name }} Project | Unisson{% endblocktrans %}{% endblock %}
+
+{% block content %}
+
+<div class="container" id="project-detail">
+
+
+<h2>Briques pour faciliter le développement en "Biens Communs" d'une initiative</h2>
+<br>
+<br>
+<table cellpadding="1" border="0" cellspacing="1" class="table table-bordered table-striped table-hover table-condensed">
+	<tbody>
+		<tr class="danger">
+			<td style="text-align: center;">
+				<strong>Besoin du projet</strong>
+			</td>
+			<td>
+				<strong>Description</strong>
+			</td>
+			<td>
+				<strong>Enjeux</strong>
+			</td>
+	
+			<td>
+				<strong>Exemple</strong>
+			</td>
+				<td>
+				<strong>Ressources</strong>
+			</td>
+		</tr>
+		{% for practice in practice.all %} 
+		<tr>
+			<td style="text-align: center;" class="tipsed on">
+				<strong>{{ practice }}</strong>
+			</td>
+			<td>
+				{{practice.description}}
+			</td>
+			<td>
+				{{practice.interest}}
+			</td>
+			<td>
+				<span style="font-size: 10px;"><em>{{practice.example}}</em></span>
+			</td>
+			<td>
+				{{practice.resources}}
+			</td>
+			
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+</div>
+
+{% endblock %}

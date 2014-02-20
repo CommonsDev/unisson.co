@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load admin_urls %}
+{% load sekizai_tags %}
+{% load guardian_tags %}
+
+{% block title %}{% blocktrans with project_name=project.name %}{{ project_name }} Project | Unisson{% endblocktrans %}{% endblock %}
+
+{% block content %}
+ 
+
+
+<div class="container" id="project-detail">
+
+    <h2>{{ project.name }}</h2>
+
+    <div class="col-xs-6 col-md-6">
+         <h4>{{ project.baseline }}</h4>
+    
+        <p class="project_desc">{{ project.description|urlize }}</p>       
+        <br>
+        <h4>Typologie du projet</h4>
+        <ul>
+            {% for practice in project.positionpractice.all %} 
+              
+                <u>{{ practice }}</u>
+              <p> <small>{{practice.description}}</small></p>
+                <small>{{ practice.pos_practice.description}}</small>
+              <div class="progress  progress-striped active">
+              <div class="progress-bar" role="progressbar" aria-valuenow="{{ practice.position }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ practice.position }}%;">{{ practice.position}}
+              </div>
+
+              </div>
+            
+
+            {% endfor %}
+            </ul>
+    </div>
+
+    <div class="col-sm-6 col-md-3">
+    <img class="img-responsive" max-width="100%" src="{{ project.picture.url }}" alt="">
+    </div>
+
+</div>
+    
+{% endblock %}

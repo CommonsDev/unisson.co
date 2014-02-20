@@ -12,6 +12,7 @@ admin.autodiscover()
 
 
 urlpatterns = i18n_patterns('',
+	url(r'^admin/', include(admin.site.urls)),
 	url(r'^group/', include('workgroup.urls')),
 	url(r'^project/', include('project.urls')),
     url(r'^blog/', include('zinnia.urls')),
