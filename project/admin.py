@@ -9,6 +9,8 @@ class ProjectAdmin(admin.ModelAdmin):
 
 class PositionpracticeAdmin(admin.ModelAdmin):
     model = Positionpractice
+    list_filter = ['practice', 'project__name']
+    search_fields = ['project__name']
 
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(ProjectCategory, ProjectCategoryAdmin)
