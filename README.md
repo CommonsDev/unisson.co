@@ -1,47 +1,46 @@
-
 unisson.co
 ==========
-Tools to support "Commons"
 
-Join list discussion : http://unisson.co/group/unisson
+Tools to support "Common Goods"
+
+Join list discussion: http://unisson.co/group/unisson
 
 Install App
-==========
+===========
 
 First, you need to setup an isolated developement environment for the
 python apps using virtualenv_. If you don't have virtualenv_, you can
 install it using your package manager such as *apt* if you're on
-debian::
+debian:
 
-  apt-get install virtualenv
-  virtualenv --no-site-packages unisson-env
+    apt-get install virtualenv
+    virtualenv --no-site-packages unisson-env
 
-Then, enters the environment::
+Then, enters the environment:
 
-  cd unisson-env
-  source bin/activate
+    cd unisson-env
+    source bin/activate
   
-Your prompt should update to something like (note the prefix)::
+Your prompt should update to something like (note the prefix):
 
-  (i4p-env)glibersat@carpe:~/Source/unisson-env
+    (i4p-env)glibersat@carpe:~/Source/unisson-env
 
-.. warning::
-
-  For all next steps, you need to be in an activated environment.
+.. warning:: For all next steps, you need to be in an activated environment.
+  
   
 Getting the code
 ================
 
 Once you're in your virtualenv directory, use::
 
-  git clone https://github.com/UnissonCo/unisson.co
-  cd unisson.co
+    git clone https://github.com/UnissonCo/unisson.co
+    cd unisson.co
   
 fetch the dependencies using::
 
-  pip install -r requirements.txt
+    pip install -r requirements.txt
   
-*It may be the right to fetch a cup of coffee! :-)*
+*It may be the right time to get a cup of coffee! :-)*
 
 .. note::
 
@@ -73,13 +72,13 @@ Django will prompt for a user creation, this is always a good idea to say *yes*:
      You just installed Django's auth system, which means you don't have any superusers defined.
      Would you like to create one now? (yes/no): **yes**
 
-Now, run the server :
+Now, run the server::
 
-   python manage.py runserver
+    python manage.py runserver
 
 
 Licenses
-==========
+========
 
 This software is licensed under the AGPLv3 (See COPYING file for more information).
 
