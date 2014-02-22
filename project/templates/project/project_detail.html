@@ -22,7 +22,7 @@
         <h4>Typologie du projet</h4>
         <ul>
             {% for practice in project.positionpractice.all %} 
-              
+
                 <u>{{ practice }}</u>
               <p> <small>{{practice.description}}</small></p>
                 <small>{{ practice.pos_practice.description}}</small>
