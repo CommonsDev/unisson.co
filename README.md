@@ -1,7 +1,7 @@
 unisson.co
 ==========
 
-Tools to support "Common Goods"
+Tools to support "Commons"
 
 Join list discussion: http://unisson.co/group/unisson
 
