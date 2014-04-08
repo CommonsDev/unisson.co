@@ -31,6 +31,13 @@ class Positionpractice(models.Model):
     def __unicode__(self):  # Python 3: def __str__(self):
             return  u"%s - %s" % (self.practice, self.position)
 
+class Usage(models.Model):
+    usage = models.CharField(max_length=200)
+   
+    def __unicode__(self):  # Python 3: def __str__(self):
+        return self.usage
+
+
 class Project(models.Model):
     """
     Root object for a project. 
@@ -53,6 +60,8 @@ class Project(models.Model):
     category = models.ForeignKey(ProjectCategory, related_name='project')
 
     positionpractice = models.ManyToManyField(Positionpractice, verbose_name=("positionpractice"),)
+    
+    projectusage = models.ForeignKey(Usage)
 
     def __unicode__(self):
     	return self.name

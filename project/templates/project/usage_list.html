@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load sekizai_tags %}
+{% load cms_tags %}  
+
+
+
+{% block content %}
+
+<div class="container" id="project-detail">
+
+
+<h2>Biens communs sélectionnés pour chaque usage :</h2>
+<br>
+<br>
+<table cellpadding="1" border="0" cellspacing="1" class="table table-bordered table-striped table-hover table-condensed">
+  <tbody>
+    <tr class="danger">
+      <td style="text-align: center;">
+        <strong>Usage</strong>
+      </td>
+      <td>
+        <strong>Projet choisi</strong>
+      </td>
+      <td>
+        <strong>Description</strong>
+      </td>
+      <td>
+        <strong>Site</strong>
+    </tr>
+    {% for project in project.all %} 
+    <tr>
+      <td style="text-align: center;" class="tipsed on">
+        <strong>{{ project.projectusage }}</strong>
+      </td>
+      <td>
+         <a href="{{ project.slug }}">{{project.name}}</a>
+      </td>
+      <td>
+        {{project.baseline}}
+      </td>
+   
+      <td>
+      <a href="{{ project.website }}">{{ project.website }}</a>
+       </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
+
+
+{% endblock %}
+

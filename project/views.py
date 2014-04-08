@@ -9,7 +9,7 @@ from django.views.generic.edit import FormView
 from django.views.generic import DeleteView, ListView, DetailView
 from django.http import HttpResponse
 
-from project.models import Project, Practice
+from project.models import Project, Practice, Usage
 
 
 class ProjectDetailView(DetailView):
@@ -34,4 +34,14 @@ class PracticeListView(ListView):
     template_name = 'project/practice_list.html'
     context_object_name = 'practice'
     
+
+class UsageListView(ListView):
+    """
+    List all usages
+    """
+    model = Project
+    template_name = 'project/usage_list.html'
+    context_object_name = 'project'
+    
+
 
