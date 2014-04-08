@@ -35,7 +35,7 @@ class Usage(models.Model):
     label = models.CharField(max_length=200)
    
     def __unicode__(self):  # Python 3: def __str__(self):
-        return self.usage
+        return self.label
 
 
 class Project(models.Model):
