@@ -32,7 +32,7 @@ class Positionpractice(models.Model):
             return  u"%s - %s" % (self.practice, self.position)
 
 class Usage(models.Model):
-    usage = models.CharField(max_length=200)
+    label = models.CharField(max_length=200)
    
     def __unicode__(self):  # Python 3: def __str__(self):
         return self.usage
@@ -61,7 +61,7 @@ class Project(models.Model):
 
     positionpractice = models.ManyToManyField(Positionpractice, verbose_name=("positionpractice"),)
     
-    projectusage = models.ForeignKey(Usage)
+    usage = models.ForeignKey(Usage, null=True, blank=True)
 
     def __unicode__(self):
     	return self.name
