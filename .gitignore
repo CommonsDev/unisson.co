@@ -1,3 +1,4 @@
+/unisson/wsgi.py
 /unisson/site_settings.py
 *.db
 /.settings/org.eclipse.core.resources.prefs
