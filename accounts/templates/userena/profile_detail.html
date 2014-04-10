@@ -27,7 +27,7 @@ $(document).ready(function() {
 	    <h1>{{ profile.get_full_name_or_username }} <small> {{ profile.location|default:"Earth" }}</small></h1>
 	  </div>
 
-	</div>
+	</div>	
       </div>
 
       <!-- buttons -->
@@ -36,7 +36,7 @@ $(document).ready(function() {
       <div class="row">
 	<div class="offset5 span4">
 	  <div class="pull-right">
-	    <a class="btn btn-default btn-warning btn-sm" href="{% url 'profile-edit' user.username %}"><span class="glyphicon glyphicon-edit"></span><i class="icon-edit"></i>&nbsp;{% trans "edit your profile"|capfirst %}</a>
+	    <a class="btn btn-default btn-warning btn-sm" href="{% url 'userena_profile_edit' user.username %}"><span class="glyphicon glyphicon-edit"></span><i class="icon-edit"></i>&nbsp;{% trans "edit your profile"|capfirst %}</a>
 	  </div>
 	  <br><br>
 	</div>
