@@ -5,6 +5,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 from userena.models import UserenaBaseProfile
+from taggit.managers import TaggableManager
 
 
 from userena.managers import ASSIGNED_PERMISSIONS
@@ -24,6 +25,8 @@ class Profile(UserenaBaseProfile):
     website = models.URLField(null=True, blank=True)
     twitter = models.CharField(max_length=100, null=True, blank=True,
                                help_text=_("Your twitter username"))
+    
+    skills = TaggableManager()
 
     @models.permalink
     def get_absolute_url(self):
