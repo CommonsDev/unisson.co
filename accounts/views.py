@@ -39,13 +39,3 @@ class ProfileDetailView(TemplateView):
         context['hide_email'] = userena_settings.USERENA_HIDE_EMAIL
 
         return context
-
-@secure_required
-@permission_required_or_403('change_profile', (get_profile_model(), 'user__username', 'username'))
-def profile_edit(request, username, *args, **kwargs):    
-    return userena_profile_edit(request,
-                                username=username,
-                                edit_profile_form=ProfileEditForm,
-                                template_name='userena/profile_form.html',
-                                success_url=reverse_lazy('profile-detail', args=(username,))
-    )
