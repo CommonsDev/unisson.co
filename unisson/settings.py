@@ -165,14 +165,6 @@ INSTALLED_APPS = (
     'south',  # intelligent schema and data migrations
     'sekizai',  # for javascript and css management
     'djangocms_admin_style',  # for the admin skin. You **must** add 'djangocms_admin_style' in the list before 'django.contrib.admin'.
-    'cms.plugins.file',
-    'cms.plugins.flash',
-    'cms.plugins.googlemap',
-    'cms.plugins.link',
-    'cms.plugins.picture',
-    'cms.plugins.snippet',
-    'cms.plugins.teaser',
-    'cms.plugins.video',
     'reversion',
     'tagging',
     'mptt',

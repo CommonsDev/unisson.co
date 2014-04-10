@@ -1,11 +1,10 @@
 # Bare minimum
-django-cms==3.0.0.beta3
-https://github.com/divio/django-cms/archive/3.0.0.beta3.zip
+django-cms==3.0.0
 
 #These dependencies are brought in by django CMS, but if you want to lock-in their version, specify them
 Django==1.6.1
 django-classy-tags==0.4
-South==0.8.1
+South==0.8.4
 html5lib==1.0b1
 django-mptt==0.5.2
 django-sekizai==0.7
