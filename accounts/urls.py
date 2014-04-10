@@ -1,9 +1,10 @@
 from django.conf.urls import patterns, include, url
 
-from .views import ProfileDetailView, profile_edit
+from .views import ProfileDetailView
 from userena import views as userena_views
 from django.contrib.auth import views as auth_views
 from userena import settings as userena_settings
+from .forms import ProfileEditForm
 
 urlpatterns = patterns('',
     # Signup, signin and signout
@@ -86,8 +87,9 @@ urlpatterns = patterns('',
 
     # Edit profile
     url(r'^(?P<username>[\.\w-]+)/edit/$',
-       profile_edit,
-       name='profile-edit'),
+       'userena.views.profile_edit',
+       {'edit_profile_form': ProfileEditForm},
+       name='userena_profile_edit'),
                        
     # View profiles
     url(r'^(?P<username>(?!signout|signup|signin)[\.\w-]+)/$',
