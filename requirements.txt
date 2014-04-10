@@ -21,6 +21,7 @@ cmsplugin-filer==0.9.5
 
 #CMS Plugins
 djangocms-text-ckeditor
+djangocms-video
 
 #Zinnia Blog
 django-blog-zinnia==0.14
