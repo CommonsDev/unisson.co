@@ -13,7 +13,7 @@ djangocms-admin-style==0.1.2
 
 
 #Optional, recommended packages
-Pillow==2.0.0
+Pillow==2.4.0
 django-filer==0.9.4
 cmsplugin-filer==0.9.5
 -e git://github.com/etianen/django-reversion.git@f3d20edf96adbb15a1970d3826d6ce8a82021048#egg=django-reversion
