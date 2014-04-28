@@ -50,15 +50,7 @@ fetch the dependencies using::
 Populating the Database
 =======================
 
-You need to configure a database server (PostGreSQL_ is recommended,
-see how to configure it in the :ref:`database-server-configuration`
-section) and create a database for the project (such as
-'imaginationforpeople').
-
-.. warning::
-
-   If you haven't configured your :file:`site_settings.py` yet, jump
-   to :ref:`application-configuration` before going on.
+Rename site_settings.py.example in site_settings.py
 
 Then you need to initialize your database with these commands::
 
@@ -72,10 +64,13 @@ Django will prompt for a user creation, this is always a good idea to say *yes*:
      You just installed Django's auth system, which means you don't have any superusers defined.
      Would you like to create one now? (yes/no): **yes**
 
+Rename wsgi.py.example in wsgi.py
+
 Now, run the server::
 
     python manage.py runserver
 
+(optionnal) You could also configure a database server on PostGreSQL_. It is recommended for large website.
 
 Licenses
 ========
