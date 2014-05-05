@@ -261,11 +261,6 @@ if DEBUG:
 
 SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
 
-SOUTH_MIGRATION_MODULES = {
-       'easy_thumbnails': 'easy_thumbnails.south_migrations',
-    }
-
-
 from django.core.urlresolvers import resolve, Resolver404, reverse_lazy
 from django.http import Http404, HttpResponseRedirect, HttpResponse
 
