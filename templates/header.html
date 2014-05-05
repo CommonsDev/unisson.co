@@ -36,6 +36,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i>&nbsp;{{ user.get_profile.get_full_name_or_username}} <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="{% url 'profile-detail' user.username %}">{% trans "My profile" %}</a></li>
+                   {% include "wiki/plugins/notifications/menubaritem.html" %}
 		  {% if user.is_staff %}
 		  <li class="divider"></li>
 		  <li><a href="{% url 'admin:index' %}">{% trans "Administration" %}</a></li>

@@ -5,6 +5,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from django.views.generic import TemplateView
+from wiki.urls import get_pattern as get_wiki_pattern
+from django_notify.urls import get_pattern as get_notify_pattern
 
 from .views import RootRouter
 
@@ -15,8 +17,9 @@ urlpatterns = i18n_patterns('',
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^group/', include('workgroup.urls')),
 	url(r'^project/', include('project.urls')),
-    url(r'^blog/', include('zinnia.urls')),
+  #  url(r'^blog/', include('zinnia.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
+    url(r'^wiki/', get_wiki_pattern()),
     url(r'^', include('cms.urls')),
 )
 
@@ -24,6 +27,7 @@ urlpatterns += patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('social_auth.urls')),    
     url(r'^', include('accounts.urls')),  
+    url(r'^notify/', get_notify_pattern()),
 )
 
 if settings.DEBUG:

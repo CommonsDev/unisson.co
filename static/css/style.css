@@ -28,27 +28,28 @@ h1.brand {padding: 0;height: 75px;padding-top: 75px;margin: -104px auto 0;width:
 .navbar-nav, .navbar-nav > li{text-align:center}
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {color: #000;text-decoration: none;background-color: transparent; -webkit-box-shadow:  0 0 0;-moz-box-shadow:  0 0 0;box-shadow: 0 0 0;border-bottom: 2px solid #F83200;}
 .nav li{display:inline-block; float:none;}
-.nav a {padding: 3px 18px; text-transform: uppercase;font-size: 14px; display: inline-block; color:#222; font-family: "Open Sans",Arial,Helvetica,sans-serif;
+.nav a {padding: 3px 18px;font-size: 14px; display: inline-block; color:#222; font-family: "Open Sans",Arial,Helvetica,sans-serif;
 font-weight: bold; }
 .navbar .nav>li>a:hover { color: #333; text-decoration: none; background-color: transparent;}
 .navbar .nav>li>a {color: #777;}
 .pull-right .dropdown {margin-top: 8px;}
 .pull-right .navbar-text {float: none;}
 .navbar-default {background-color: transparent; border-color: transparent;}
+.dropdown-menu .divider {display: list-item;}
 .txtR{text-align:right}
 #blogSection{background: #e6e6e6;}
 #ourServices{background: #e6e6e6;text-align: center;border-top: 1px solid #ddd;}
 #ourServices .thumbnail{background:#fff;}
 #ourServices .thumbnail:hover{color:#fff}
 
-#headerSection {background: url(../images/shadow.png) no-repeat center bottom #EEE;border-bottom: 1px solid #dedede; padding: 8px 0 0;}
+#headerSection {background: url(../images/shadow.png) no-repeat center bottom #EEE;border-bottom: 1px solid #dedede; padding: 0px 0 0;}
 #welcomeSection{padding:44px 0}
 #headerSection {border-bottom:1px solid #fff;position: fixed;top: 0;left: 0;display: inline-block;width: 100%;z-index: 1;transition: all 800ms;z-index: 9999;}
 .blockDtl {text-align:center}
 .blockDtl:hover{color:#FE5214}
 #shadow{background:url(../images/shadow.png) no-repeat center bottom #fff; min-height:44px; padding:18px 0; text-align:center}
 
-#carouselSection{ margin:0 auto; background:url(../images/shadowsReverse.png) no-repeat center bottom #fff; padding: 68px 0 31px; color:#eee;}
+#carouselSection{ margin:0 auto; background:url(../images/shadowsReverse.png) no-repeat center bottom #fff; padding: 68px 0 25px; color:#eee;}
 #carouselSection #myCarousel{margin-bottom:0}
 #myCarousel .carousel .item {-webkit-transition: opacity 3s; -moz-transition: opacity 3s; -ms-transition: opacity 3s; -o-transition: opacity 3s; transition: opacity 3s;}
 #myCarousel .carousel .active.left {left:0;opacity:0;z-index:2;}
@@ -142,3 +143,82 @@ font-weight: bold;
 .tab-content ul {
 list-style-type: none;
 }
+
+/* Wiki Style */
+#div_id_content .wiki-control {
+width:100%;
+}
+#div_id_content .wiki-control textarea {
+height:400px;
+}
+
+#div_id_content label.control-label {
+display: none;
+}
+
+#id_title {
+font-size: 14px; 
+}
+
+.accordion-toggle h3 {
+font-size: 17px;
+}
+
+.lead {
+    font-size: 14px;
+    font-weight: none;
+}
+#article-container{
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.nav .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+
+li.pull-right a {
+font-size: 13px;
+color: #777;
+}
+.nav-pills>li.active>a {
+background-color: #eee;
+color:#333;
+}
+
+.nav-pills>li.active>a:hover {
+background-color: #eee;
+color:#333;
+}
+h1#article-title {
+color: #FE5214;
+text-transform:capitalize;
+}
+
+ul.breadcrumb.pull-left {
+display: none;
+}
+
+#article-menu a {
+text-transform:capitalize;
+font-weight: normal; 
+}
+
+#article-breadcrumbs {
+float: right;
+margin-top: 19px;
+}
+#article-breadcrumbs a {
+text-transform: none;
+}
+#article-breadcrumbs .btn-info {
+background-color: #eee;
+border-color: #eee;
+color: #777;
+}
+
+#article-breadcrumbs .caret {
+border-top-color: #777;
+border-bottom-color: #777;
+}
+/* End wiki style */
+

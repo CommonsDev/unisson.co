@@ -111,18 +111,20 @@ MIDDLEWARE_CLASSES = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.i18n',
     'django.core.context_processors.request',
     'django.core.context_processors.media',
     'django.core.context_processors.static',
+    'django.core.context_processors.tz',
     'social_auth.context_processors.social_auth_by_name_backends',
     'social_auth.context_processors.social_auth_backends',
     'social_auth.context_processors.social_auth_by_type_backends',
     'social_auth.context_processors.social_auth_login_redirect',   
     'cms.context_processors.media',
     'sekizai.context_processors.sekizai',
-    'zinnia.context_processors.version',  # Optional
+   # 'zinnia.context_processors.version',  # Optional
 )
 
 ROOT_URLCONF = 'unisson.urls'
@@ -154,6 +156,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'guardian',
+    "django_extensions",
     'easy_thumbnails',
     'userena',
     'accounts',
@@ -170,11 +173,19 @@ INSTALLED_APPS = (
     'tagging',
     'taggit',
     'mptt',
-    'zinnia_bootstrap',
-    'zinnia',
+   # 'zinnia_bootstrap',
+    #'zinnia',
     'django_mailman',
     'workgroup',
     'project',
+    'django.contrib.humanize',
+    'django_notify',
+    'sorl.thumbnail',
+    'wiki',
+    'wiki.plugins.attachments',
+    'wiki.plugins.notifications',
+    'wiki.plugins.images',
+    'wiki.plugins.macros',
 )
 
 CKEDITOR_SETTINGS = {
@@ -249,3 +260,27 @@ if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
+
+SOUTH_MIGRATION_MODULES = {
+       'easy_thumbnails': 'easy_thumbnails.south_migrations',
+    }
+
+
+from django.core.urlresolvers import resolve, Resolver404, reverse_lazy
+from django.http import Http404, HttpResponseRedirect, HttpResponse
+
+def hacky_handle_no_page(request, slug):
+    if not slug and settings.DEBUG:
+        return TemplateResponse(request, "cms/welcome.html", RequestContext(request))
+    try:
+        #add a $ to the end of the url (does not match on the cms anymore)
+        resolve('%s$' % request.path)
+    except Resolver404 as e:
+        # raise a django http 404 page
+        #exc = Http404(dict(path=request.path, tried=e.args[0]['tried']))
+        exc = HttpResponseRedirect("/wiki/%s" % slug)
+        return exc
+    return HttpResponseRedirect("/wiki/%s" % slug)
+
+import cms.views
+cms.views._handle_no_page = hacky_handle_no_page
