@@ -33,7 +33,7 @@ font-weight: bold; }
 .navbar .nav>li>a:hover { color: #333; text-decoration: none; background-color: transparent;}
 .navbar .nav>li>a {color: #777;}
 .pull-right .dropdown {margin-top: 8px;}
-.pull-right .navbar-text {float: none;}
+.pull-right .navbar-text {float: none; font-family: "Open Sans",Arial,Helvetica,sans-serif;}
 .navbar-default {background-color: transparent; border-color: transparent;}
 .dropdown-menu .divider {display: list-item;}
 .txtR{text-align:right}
