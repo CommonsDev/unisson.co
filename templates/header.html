@@ -57,6 +57,16 @@
 	      </li> -->
 
 	      {% endif %}
+          <form class="navbar-form pull-right-block-on-responsive" id="wiki-search-form" method="GET" action="{% url 'wiki:search' %}">
+            <div class="input-group">
+              <input type="search" class="form-control search-query" name="q" placeholder="{% trans "Search..." %}" />
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                  <span class="icon-search"></span>
+                </button>
+              </span>
+            </div><!-- /input-group -->
+          </form>
             </ul>  
     
     	</div><!-- /.navbar-collapse -->

@@ -20,11 +20,10 @@
 body{ padding:0; color: #454545; font-family: 'Open Sans', sans-serif;}
 a,a:hover{text-decoration:none; color:#FE5214}
 h2{color:#FE5214; text-rendering: optimizelegibility; }
-h1.brand {padding: 0;height: 75px;padding-top: 75px;margin: -104px auto 0;width: 250px;background: #2d292a;border-radius: 2%;box-shadow: 0px 0px 4px #000;color: #fff;font-size: 41px;text-shadow: 1px 1px 0 #000;line-height: 81px;}
 .clr{clear:both}
 .cntr{text-align:center}
 .navbar{margin-bottom:-1px; margin-top:8px; position:relative }
-.navbar-nav {width: 70%; border: 0; margin-left: 0; margin-right: 0; padding-top: 0; padding-bottom: 0; -webkit-box-shadow: none; box-shadow: none;}
+.navbar-nav {border: 0; margin-left: 0; margin-right: 0; padding-top: 0; padding-bottom: 0; -webkit-box-shadow: none; box-shadow: none;}
 .navbar-nav, .navbar-nav > li{text-align:center}
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {color: #000;text-decoration: none;background-color: transparent; -webkit-box-shadow:  0 0 0;-moz-box-shadow:  0 0 0;box-shadow: 0 0 0;border-bottom: 2px solid #F83200;}
 .nav li{display:inline-block; float:none;}
@@ -49,7 +48,8 @@ font-weight: bold; }
 .blockDtl:hover{color:#FE5214}
 #shadow{background:url(../images/shadow.png) no-repeat center bottom #fff; min-height:44px; padding:18px 0; text-align:center}
 
-#carouselSection{ margin:0 auto; background:url(../images/shadowsReverse.png) no-repeat center bottom #fff; padding: 68px 0 25px; color:#eee;}
+#carouselSection{ margin:0 auto; background:url(../images/shadowsReverse.png) no-repeat center bottom #fff; padding: 55px 0 25px; color:#eee;}
+
 #carouselSection #myCarousel{margin-bottom:0}
 #myCarousel .carousel .item {-webkit-transition: opacity 3s; -moz-transition: opacity 3s; -ms-transition: opacity 3s; -o-transition: opacity 3s; transition: opacity 3s;}
 #myCarousel .carousel .active.left {left:0;opacity:0;z-index:2;}
@@ -177,21 +177,22 @@ font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 li.pull-right a {
-font-size: 13px;
+font-size: 12px;
 color: #777;
 }
 .nav-pills>li.active>a {
 background-color: #eee;
 color:#333;
+padding: 9px 8px;
 }
 
 .nav-pills>li.active>a:hover {
 background-color: #eee;
 color:#333;
+padding: 9px 8px;   
 }
 h1#article-title {
 color: #FE5214;
-text-transform:capitalize;
 }
 
 ul.breadcrumb.pull-left {
@@ -205,7 +206,7 @@ font-weight: normal;
 
 #article-breadcrumbs {
 float: right;
-margin-top: 19px;
+margin-top:21px;
 }
 #article-breadcrumbs a {
 text-transform: none;
@@ -220,5 +221,32 @@ color: #777;
 border-top-color: #777;
 border-bottom-color: #777;
 }
+.navbar-form .form-control  { 
+width: 130px;
+font-size: 11px;
+height: 30px;
+margin-top: 3px;
+}
+
+.icon-search:before {
+height: 10px;
+}
+.navbar-form .btn {
+margin-bottom: 1px;
+line-height: 1.12;
+margin-top: 3px;
+}
+
 /* End wiki style */
 
+/* CMS */
+#faqAccordion .accordion-group {
+    border:0px;
+}
+
+#faqAccordion .accordion-heading .accordion-toggle {
+    padding: 8px 15px;
+}
+.cms-ready h2 {
+text-align: center;
+}

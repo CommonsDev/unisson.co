@@ -9,9 +9,11 @@
     <!-- Bootstrap -->
   	{% block css %}
     {% endblock %}
+     <link href="{{ STATIC_URL }}wiki/bootstrap/css/wiki-bootstrap.min.css" rel="stylesheet">
     <link id="callCss" rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
 	<link id="callCss" rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen" charset="utf-8" />
 	<link rel="stylesheet" href="{{ STATIC_URL }}font-awesome/css/font-awesome.min.css">
+
     {% render_block "css" %}
   </head>
 
