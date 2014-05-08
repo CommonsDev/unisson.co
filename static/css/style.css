@@ -233,7 +233,7 @@ height: 10px;
 }
 .navbar-form .btn {
 margin-bottom: 0px;
-line-height: 1.2;
+line-height: 1.14;
 margin-top: 3px;
 }
 #article-title small {
@@ -246,7 +246,7 @@ margin-top: -44px;
 .collapse.navbar-collapse {
     width: 90%
 }
-
+    
 li.dropdown.usernav {
 margin-top: 4px;
 }
