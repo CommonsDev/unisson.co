@@ -186,7 +186,9 @@ INSTALLED_APPS = (
     'wiki.plugins.notifications',
     'wiki.plugins.images',
     'wiki.plugins.macros',
-)
+    'wiki.plugins.help',
+    'wiki.plugins.links',
+ )
 
 CKEDITOR_SETTINGS = {
     'toolbar': 'full',

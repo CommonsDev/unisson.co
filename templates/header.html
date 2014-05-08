@@ -31,9 +31,11 @@
               </form>
 	      -->
               <li class="divider-vertical"></li>
+
 	      {% if not user.is_anonymous %}
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i>&nbsp;{{ user.get_profile.get_full_name_or_username}} <b class="caret"></b></a>
+              
+              <li class="dropdown usernav">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge notification-cnt">0</span></i>&nbsp;{{ user.get_profile.get_full_name_or_username}} <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="{% url 'profile-detail' user.username %}">{% trans "My profile" %}</a></li>
                    {% include "wiki/plugins/notifications/menubaritem.html" %}
@@ -57,7 +59,11 @@
 	      </li> -->
 
 	      {% endif %}
-          <form class="navbar-form pull-right-block-on-responsive" id="wiki-search-form" method="GET" action="{% url 'wiki:search' %}">
+
+            </ul>  
+    
+    	</div><!-- /.navbar-collapse -->
+        <form class="navbar-form pull-right-block-on-responsive" id="wiki-search-form" method="GET" action="{% url 'wiki:search' %}">
             <div class="input-group">
               <input type="search" class="form-control search-query" name="q" placeholder="{% trans "Search..." %}" />
               <span class="input-group-btn">
@@ -67,9 +73,6 @@
               </span>
             </div><!-- /input-group -->
           </form>
-            </ul>  
-    
-    	</div><!-- /.navbar-collapse -->
   		</div><!-- /.container-fluid -->
 		</nav>
 

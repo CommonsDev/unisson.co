@@ -28,7 +28,7 @@ h2{color:#FE5214; text-rendering: optimizelegibility; }
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {color: #000;text-decoration: none;background-color: transparent; -webkit-box-shadow:  0 0 0;-moz-box-shadow:  0 0 0;box-shadow: 0 0 0;border-bottom: 2px solid #F83200;}
 .nav li{display:inline-block; float:none;}
 .nav a {padding: 3px 18px;font-size: 14px; display: inline-block; color:#222; font-family: "Open Sans",Arial,Helvetica,sans-serif;
-font-weight: bold; }
+font-weight: bold; }r/admin/
 .navbar .nav>li>a:hover { color: #333; text-decoration: none; background-color: transparent;}
 .navbar .nav>li>a {color: #777;}
 .pull-right .dropdown {margin-top: 8px;}
@@ -232,16 +232,29 @@ margin-top: 3px;
 height: 10px;
 }
 .navbar-form .btn {
-margin-bottom: 1px;
-line-height: 1.12;
+margin-bottom: 0px;
+line-height: 1.2;
 margin-top: 3px;
 }
+#article-title small {
+display: none;
+}
 
+#wiki-search-form {
+margin-top: -44px;
+}
+.collapse.navbar-collapse {
+    width: 90%
+}
+
+li.dropdown.usernav {
+margin-top: 4px;
+}
 /* End wiki style */
 
 /* CMS */
 #faqAccordion .accordion-group {
-    border:0px;
+border:0px;
 }
 
 #faqAccordion .accordion-heading .accordion-toggle {
