@@ -13,7 +13,7 @@ python apps using virtualenv_. If you don't have virtualenv_, you can
 install it using your package manager such as *apt* if you're on
 debian:
 
-    apt-get install virtualenv
+    apt-get install python-virtualenv
     virtualenv --no-site-packages unisson-env
 
 Then, enters the environment:
