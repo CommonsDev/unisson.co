@@ -14,7 +14,7 @@ install it using your package manager such as *apt* if you're on
 debian:
 
     apt-get install python-virtualenv
-    virtualenv --no-site-packages unisson-env
+    virtualenv unisson-env
 
 Then, enters the environment:
 
