@@ -229,7 +229,7 @@ margin-top: 3px;
 }
 
 .icon-search:before {
-height: 10px;
+height: 14px;
 }
 .navbar-form .btn {
 margin-bottom: 0px;
@@ -264,4 +264,12 @@ border:0px;
 .progress-bar {
     color: rgba(59, 59, 59, 1);
     font-weight: bold;
+}
+
+button.btn.btn-default {
+height: 30px;
+}
+
+.googleconnect {
+margin-top: 4px;
 }

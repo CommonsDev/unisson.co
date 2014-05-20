@@ -18,8 +18,12 @@
 	<tbody>
 		<tr class="danger">
 			<td style="text-align: center;">
-				<strong>Besoin du projet</strong>
+				<strong>Composant</strong>
 			</td>
+			<td style="text-align: center;">
+				<strong>Catégorie</strong>
+			</td>
+		
 			<td>
 				<strong>Description</strong>
 			</td>
@@ -34,11 +38,12 @@
 		</tr>
 		{% for practice in practice.all %} 
 		<tr>
-			<td>
-				{{practice.category}}
-			</td>
+			
 			<td style="text-align: center;" class="tipsed on">
 				<strong>{{ practice }}</strong>
+			</td>
+			<td>
+				<stong>{{practice.category}}</strong>
 			</td>
 			<td>
 				{{practice.description}}
