@@ -30,12 +30,13 @@
 			<td>
 				<strong>Exemple</strong>
 			</td>
-				<td>
-				<strong>Ressources</strong>
-			</td>
+
 		</tr>
 		{% for practice in practice.all %} 
 		<tr>
+			<td>
+				{{practice.category}}
+			</td>
 			<td style="text-align: center;" class="tipsed on">
 				<strong>{{ practice }}</strong>
 			</td>
@@ -46,11 +47,9 @@
 				{{practice.interest}}
 			</td>
 			<td>
-				<span style="font-size: 10px;"><em>{{practice.example}}</em></span>
+				{{practice.example}}
 			</td>
-			<td>
-				{{practice.resources}}
-			</td>
+
 			
 		</tr>
 		{% endfor %}

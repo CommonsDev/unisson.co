@@ -260,3 +260,8 @@ border:0px;
 #faqAccordion .accordion-heading .accordion-toggle {
     padding: 8px 15px;
 }
+
+.progress-bar {
+    color: rgba(59, 59, 59, 1);
+    font-weight: bold;
+}

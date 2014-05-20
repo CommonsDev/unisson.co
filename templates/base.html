@@ -1,6 +1,8 @@
 {% load i18n %}
 {% load cms_tags sekizai_tags %}
 {% load menu_tags %}
+{% load inplace_edit %}
+{% inplace_static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,6 +17,7 @@
 	<link rel="stylesheet" href="{{ STATIC_URL }}font-awesome/css/font-awesome.min.css">
 
     {% render_block "css" %}
+
   </head>
 
   <body data-spy="scroll" data-target=".navbar">
@@ -88,6 +91,8 @@
 </script>
 <script src="{{ STATIC_URL }}wiki/js/core.js"></script>
 <script src="{{ STATIC_URL }}wiki/js/jquery.min.js"></script>
+
+     {% inplace_static %} {% comment %} or inplace_static {% endcomment %}
 
 {% render_block "js" %}
 

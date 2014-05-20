@@ -188,11 +188,35 @@ INSTALLED_APPS = (
     'wiki.plugins.macros',
     'wiki.plugins.help',
     'wiki.plugins.links',
+    'tastypie',
+    'inplaceeditform',
+    'inplaceeditform_extra_fields',
+    'categories',
+    'categories.editor',
  )
 
 CKEDITOR_SETTINGS = {
     'toolbar': 'full',
 }
+
+INPLACEEDIT_EDIT_EMPTY_VALUE = 'Double click to edit'
+INPLACEEDIT_AUTO_SAVE = True
+INPLACEEDIT_EVENT = "dblclick"
+INPLACEEDIT_DISABLE_CLICK = True  # For inplace edit text into a link tag
+INPLACEEDIT_EDIT_MESSAGE_TRANSLATION = 'Write a translation' # transmeta option
+INPLACEEDIT_SUCCESS_TEXT = 'Successfully saved'
+INPLACEEDIT_UNSAVED_TEXT = 'You have unsaved changes'
+INPLACE_ENABLE_CLASS = 'enable'
+ADAPTOR_INPLACEEDIT_EDIT = 'inplaceeditform.perms.AdminDjangoPermEditInline'
+DEFAULT_INPLACE_EDIT_OPTIONS = {} # dictionnary of the optionals parameters that the templatetag can receive to change its behavior (see the Advanced usage section)
+DEFAULT_INPLACE_EDIT_OPTIONS_ONE_BY_ONE = True # modify the behavior of the DEFAULT_INPLACE_EDIT_OPTIONS usage, if True then it use the default values not specified in your template, if False it uses these options only when the dictionnary is empty (when you do put any options in your template)
+INPLACE_GET_FIELD_URL = None # to change the url where django-inplaceedit use to get a field
+INPLACE_SAVE_URL = None # to change the url where django-inplaceedit use to save a field
+
+ADAPTOR_INPLACEEDIT = {'image': 'inplaceeditform_extra_fields.fields.AdaptorImageThumbnailField',
+                       'fk': 'inplaceeditform_extra_fields.fields.AdaptorAutoCompleteForeingKeyField',
+                        'image_thumb': 'inplaceeditform_extra_fields.fields.AdaptorImageThumbnailField',
+                       'm2mcomma': 'inplaceeditform_extra_fields.fields.AdaptorAutoCompleteManyToManyField'}
 
 TEXT_ADDITIONAL_ATTRIBUTES = ('data-toggle', 'data-parent', 'original-title')
 

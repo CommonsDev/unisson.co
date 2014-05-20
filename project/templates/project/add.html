@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load sekizai_tags %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="container">
+<div class="row">
+<div class="span12">
+<legend>{% trans "Add a project" %}</legend>
+<form method='POST' action='?'>
+{% csrf_token %}
+{{ form }}
+<button type='submit'>{% trans "Add" %}</button>
+</form>
+</div>	
+</div>
+    </div>
+    
+
+{% endblock %}

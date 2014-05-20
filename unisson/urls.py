@@ -19,6 +19,7 @@ urlpatterns = i18n_patterns('',
 	url(r'^project/', include('project.urls')),
     url(r'^blog/', include('zinnia.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
+    url(r'^categories/', include('categories.urls')),
     url(r'^wiki/', get_wiki_pattern()),
     url(r'^', include('cms.urls')),
 )
@@ -28,6 +29,7 @@ urlpatterns += patterns('',
     url(r'^', include('social_auth.urls')),    
     url(r'^', include('accounts.urls')),  
     url(r'^notify/', get_notify_pattern()),
+    url(r'^inplaceeditform/', include('inplaceeditform.urls')),
 )
 
 if settings.DEBUG:

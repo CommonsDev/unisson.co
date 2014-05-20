@@ -1,6 +1,7 @@
 import os
 from django.db import models
 from autoslug.fields import AutoSlugField
+from categories.models import CategoryBase, Category
 
 def project_upload(instance, filename):
     return os.path.join("project", filename)
@@ -19,6 +20,7 @@ class Practice(models.Model):
     description = models.TextField()
     interest = models.TextField()
     example = models.TextField()
+    category = models.ForeignKey(Category, null=True, blank=True)
     
     def __unicode__(self):  # Python 3: def __str__(self):
         return unicode(self.practice)
@@ -49,17 +51,25 @@ class Project(models.Model):
                             		max_length=150)
 
     baseline = models.CharField(verbose_name=("one line description"),
-                                    max_length=180)
-    description = models.TextField()
+                                    max_length=180,
+                              null=True,
+                              blank=True)
+    description = models.TextField(
+                              null=True,
+                              blank=True)
     website = models.URLField(verbose_name=('website'),
                               max_length=200,
                               null=True,
                               blank=True)
     
     picture = models.ImageField(upload_to=project_upload, null=True, blank=True)
-    category = models.ForeignKey(ProjectCategory, related_name='project')
+    category = models.ForeignKey(ProjectCategory, related_name='project',
+                              null=True,
+                              blank=True)
 
-    positionpractice = models.ManyToManyField(Positionpractice, verbose_name=("positionpractice"),)
+    positionpractice = models.ManyToManyField(Positionpractice, verbose_name=("positionpractice")   ,
+                              null=True,
+                              blank=True)
     
     usage = models.ForeignKey(Usage, null=True, blank=True)
 

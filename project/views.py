@@ -8,9 +8,10 @@ from django.http import HttpResponseForbidden
 from django.views.generic.edit import FormView
 from django.views.generic import DeleteView, ListView, DetailView
 from django.http import HttpResponse
-
+from django.views.generic.edit import FormView
+from django.shortcuts import render_to_response, get_object_or_404, redirect
 from project.models import Project, Practice, Usage
-
+from .forms import ProjectAddForm
 
 class ProjectDetailView(DetailView):
     model=Project
@@ -43,5 +44,25 @@ class UsageListView(ListView):
     template_name = 'project/usage_list.html'
     context_object_name = 'project'
     
+
+class ProjectStartView(FormView):
+    """
+When one starts a project, after having selected a topic
+"""
+    template_name = 'project/add.html'
+    form_class = ProjectAddForm
+    
+    def form_valid(self, form):
+        # This method is called when valid form data has been POSTed.
+        # It should return an HttpResponse.
+        project = form.save(commit=False)
+        project.save()
+
+        messages.success(self.request, _("Project '%(project_name)s' added" % {'project_name':project.name}))
+        
+        return super(ProjectStartView, self).form_valid(form)
+
+
+
 
 

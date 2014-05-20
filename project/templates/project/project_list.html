@@ -31,7 +31,7 @@
           <li class="col-sm-6 col-md-3">
             <div class="thumbnail">
               <div class="blockDtl">
-              <a href="/project/{{ project.slug }}"><img class="img-responsive" max-height="100px" src="{{ project.picture.url }}" alt=""></a>
+              {% if project.picture %}<a href="/project/{{ project.slug }}"><img class="img-responsive" max-height="100px" src="{{ project.picture.url }}" alt=""></a>{% endif %}
               <h4>{{ project.name }}</h4>
               <p>{{ project.baseline }}</p>
               </div>
@@ -53,7 +53,7 @@
           <li class="col-sm-6 col-md-3">
             <div class="thumbnail">
               <div class="blockDtl">
-              <a href="{{ project.website }}"><img class="img-responsive" max-height="100px" src="{{ project.picture.url }}" alt=""></a>
+               {% if project.picture %}<a href="{{ project.website }}"><img class="img-responsive" max-height="100px" src="{{ project.picture.url }}" alt=""></a>{% endif %}
               <h4>{{ project.name }}</h4>
               <p>{{ project.baseline }}</p>
             </div>             
