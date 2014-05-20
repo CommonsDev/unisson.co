@@ -188,7 +188,6 @@ INSTALLED_APPS = (
     'wiki.plugins.macros',
     'wiki.plugins.help',
     'wiki.plugins.links',
-    'tastypie',
     'inplaceeditform',
     'inplaceeditform_extra_fields',
     'categories',

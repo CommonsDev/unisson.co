@@ -41,3 +41,7 @@ django-taggit==0.11.2
 wiki==0.0.23
 
 django-extensions==1.3.5
+
+-e git://github.com/callowayproject/django-categories.git@a4c9e709508d193af4ee3596e6340ea08573a254#egg=django_categories-master
+-e git://github.com/Yaco-Sistemas/django-inplaceedit.git@7994f529c2a9b73c5e7537ed0141fc6262634ef6#egg=django_inplaceedit-master
+-e git://github.com/goinnn/django-inplaceedit-extra-fields.git@6593e017f7c1663840558edfd313223eeaf1a6dc#egg=django_inplaceedit_extra_fields-master
