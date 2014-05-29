@@ -65,7 +65,7 @@ data : [{% for practice in project.positionpractice.all %}{{practice.position}},
 ]
 }
 
-var myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData,{scaleStartValue : 0 ,  scaleSteps : 20 , scaleStartValue : 10, scaleShowLabels : true,  pointLabelFontSize : 9});
+var myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData,{ scaleOverride : true, scaleStartValue : 0, scaleStepWidth : 10, scaleSteps : 10 ,  pointLabelFontSize : 9, });
 
 </script>
     </div>
