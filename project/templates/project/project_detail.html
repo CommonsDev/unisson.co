@@ -31,7 +31,9 @@
              <small>
               <h4>Description :</h4>{% inplace_edit "practice.practice.description" %}
                 <h4>Intérêt </h4>
-        {% inplace_edit "practice.practice.interest" %}  <h4>Exemples</h4>{% inplace_edit "practice.practice.example" %}   </small>
+        {% inplace_edit "practice.practice.interest" %}  <h4>Exemples</h4>{% inplace_edit "practice.practice.example" %}  
+         <h4>Fiche descriptive</h4><a href="/wiki/{{practice.practice.wikipage}}">{% inplace_edit "practice.practice.wikipage" %}</a>  
+          </small>
         <br>
               &nbsp;</p></div></div>
               <p> <small> {% inplace_edit "practice.description" %}</small></p>

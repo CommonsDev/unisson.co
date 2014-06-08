@@ -3,6 +3,7 @@
 {% load admin_urls %}
 {% load sekizai_tags %}
 {% load guardian_tags %}
+{% load inplace_edit %}
 
 {% block title %}{% blocktrans with project_name=project.name %}{{ project_name }} Project | Unisson{% endblocktrans %}{% endblock %}
 
@@ -11,17 +12,14 @@
 <div class="container" id="project-detail">
 
 
-<h2>Briques pour faciliter le développement en "Biens Communs" d'une initiative</h2>
+<h2>Briques pour faciliter le développement d'un "commun libre"</h2>
+<p>Ce tableau liste dix éléments à prendre en compte pour construire une initiative en communs libres, avec pour chacun des ressources proposées. Cet outil pourra guider à la réflexion toute construcion de communs par leurs commoners. </p>
 <br>
-<br>
-<table cellpadding="1" border="0" cellspacing="1" class="table table-bordered table-striped table-hover table-condensed">
+<table cellpadding="1"  border="1" cellspacing="1" class="table table-bordered table-striped table-hover table-condensed">
 	<tbody>
-		<tr class="danger">
-			<td style="text-align: center;">
-				<strong>Composant</strong>
-			</td>
-			<td style="text-align: center;">
-				<strong>Catégorie</strong>
+		<tr style="text-align: center;" >
+			<td >
+				<strong>Brique</strong>
 			</td>
 		
 			<td>
@@ -32,27 +30,27 @@
 			</td>
 	
 			<td>
-				<strong>Exemple</strong>
+				<strong>Ressource/Exemple</strong>
 			</td>
 
 		</tr>
 		{% for practice in practice.all %} 
-		<tr>
+		<tr style="text-align: justify; font-size:0.8em;">
 			
-			<td style="text-align: center;" class="tipsed on">
-				<strong>{{ practice }}</strong>
+			<td  style="text-align: center;" >
+				<h4  class="tipsed on"><a href="/wiki/{{practice.wikipage}}">{{ practice }}</a></h4>
+				<p>{% inplace_edit "practice.baseline" %}</p>
+				<a href="/wiki/{{practice.wikipage}}">>Voir la fiche {{practice.wikipage}}</a>
+			</td>
 			</td>
 			<td>
-				<stong>{{practice.category}}</strong>
+				{% inplace_edit "practice.description" %}
 			</td>
 			<td>
-				{{practice.description}}
+				{% inplace_edit "practice.interest" %}
 			</td>
 			<td>
-				{{practice.interest}}
-			</td>
-			<td>
-				{{practice.example}}
+				{% inplace_edit "practice.example" %}
 			</td>
 
 			

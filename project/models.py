@@ -17,9 +17,11 @@ class ProjectCategory(models.Model):
 
 class Practice(models.Model):
     practice = models.CharField(max_length=200)
+    baseline = models.CharField(verbose_name=("one line description"), max_length=500, null=True, blank=True)
     description = models.TextField()
     interest = models.TextField()
     example = models.TextField()
+    wikipage = models.TextField(null=True, blank=True)
     category = models.ForeignKey(Category, null=True, blank=True)
     
     def __unicode__(self):  # Python 3: def __str__(self):
