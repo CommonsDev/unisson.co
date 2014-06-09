@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from wiki.urls import get_pattern as get_wiki_pattern
 from django_notify.urls import get_pattern as get_notify_pattern
-
+from project.views import PracticeListView
 from .views import RootRouter
 
 admin.autodiscover()
@@ -19,6 +19,7 @@ urlpatterns = i18n_patterns('',
 	url(r'^project/', include('project.urls')),
     url(r'^blog/', include('zinnia.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
+    url(r'^common$', PracticeListView.as_view(), name='practice-list'), 
     url(r'^categories/', include('categories.urls')),
     url(r'^wiki/', get_wiki_pattern()),
     url(r'^', include('cms.urls')),
