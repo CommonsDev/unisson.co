@@ -31,6 +31,7 @@ urlpatterns += patterns('',
     url(r'^', include('accounts.urls')),  
     url(r'^notify/', get_notify_pattern()),
     url(r'^inplaceeditform/', include('inplaceeditform.urls')),
+    url(r'^common$', PracticeListView.as_view(), name='practice-list'), 
 )
 
 if settings.DEBUG:
