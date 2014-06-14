@@ -32,6 +32,7 @@ urlpatterns += patterns('',
     url(r'^notify/', get_notify_pattern()),
     url(r'^inplaceeditform/', include('inplaceeditform.urls')),
     url(r'^common$', PracticeListView.as_view(), name='practice-list'), 
+    url(r'^password_reset_done/$', 'django.contrib.auth.views.password_reset_done', name="password_reset_done"),
 )
 
 if settings.DEBUG:
