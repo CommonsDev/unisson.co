@@ -290,7 +290,7 @@ from django.core.urlresolvers import resolve, Resolver404, reverse_lazy
 from django.http import Http404, HttpResponseRedirect, HttpResponse
 
 def hacky_handle_no_page(request, slug):
-    if not slug and settings.DEBUG:
+    if not slug and DEBUG:
         return TemplateResponse(request, "cms/welcome.html", RequestContext(request))
     try:
         #add a $ to the end of the url (does not match on the cms anymore)
