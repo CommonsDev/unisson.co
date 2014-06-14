@@ -13,8 +13,9 @@
      <h1 class="workgroup_title"><a href="{{ workgroup.get_absolute_url }}">Groupe "{{ workgroup.name }}"</a></h1>
        <span class="workgroup_desc">{{ workgroup.description|urlize }}</span>
     <h2>Inscription au groupe</h2>
+    <p>En vous inscrivant, vous rejoignez la liste de discussion "unisson@lists.unisson.co" et serez informés des discussions :<p>
     {% include "workgroup/block/subscribe_button.html" %}
-
+    <p>Vous pouvez aussi vous inscrire directement à la liste <a href=http://lists.unisson.co/cgi-bin/mailman/listinfo/unisson>via l'interface mailman</a></p>
     <h2>Membres</h2>
     {% include "workgroup/block/workgroup_subscribers.html" %}
     
