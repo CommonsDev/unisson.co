@@ -304,3 +304,11 @@ def hacky_handle_no_page(request, slug):
 
 import cms.views
 cms.views._handle_no_page = hacky_handle_no_page
+
+# South need the following lines for correct migrations handling.
+# If not present, it raises a ImproperlyConfiguredError
+# When launching `python manage.py migrate --fake`
+
+SOUTH_MIGRATION_MODULES = {
+    'easy_thumbnails': 'easy_thumbnails.south_migrations',
+}
