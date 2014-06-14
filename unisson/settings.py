@@ -288,9 +288,10 @@ SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
 
 from django.core.urlresolvers import resolve, Resolver404, reverse_lazy
 from django.http import Http404, HttpResponseRedirect, HttpResponse
+from django.template.response import TemplateResponse, RequestContext
 
 def hacky_handle_no_page(request, slug):
-    if not slug and settings.DEBUG:
+    if not slug and DEBUG:
         return TemplateResponse(request, "cms/welcome.html", RequestContext(request))
     try:
         #add a $ to the end of the url (does not match on the cms anymore)
@@ -304,3 +305,11 @@ def hacky_handle_no_page(request, slug):
 
 import cms.views
 cms.views._handle_no_page = hacky_handle_no_page
+
+# South need the following lines for correct migrations handling.
+# If not present, it raises a ImproperlyConfiguredError
+# When launching `python manage.py migrate --fake`
+
+SOUTH_MIGRATION_MODULES = {
+    'easy_thumbnails': 'easy_thumbnails.south_migrations',
+}
