@@ -288,6 +288,7 @@ SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
 
 from django.core.urlresolvers import resolve, Resolver404, reverse_lazy
 from django.http import Http404, HttpResponseRedirect, HttpResponse
+from django.template.response import TemplateResponse, RequestContext
 
 def hacky_handle_no_page(request, slug):
     if not slug and DEBUG:
