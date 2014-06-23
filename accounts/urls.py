@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 
-from .views import ProfileDetailView
+from .views import profile_detail
 from userena import views as userena_views
 from django.contrib.auth import views as auth_views
 from userena import settings as userena_settings
@@ -93,8 +93,12 @@ urlpatterns = patterns('',
                        
     # View profiles
     url(r'^(?P<username>(?!signout|signup|signin)[\.\w-]+)/$',
-        ProfileDetailView.as_view(),
+        profile_detail,
         name='profile-detail'),
+    # Duplicate because userena needs a view with this name
+    url(r'^(?P<username>(?!signout|signup|signin)[\.\w-]+)/$',
+        profile_detail,
+        name='userena_profile_detail'),
                        
     url(r'^u/page/(?P<page>[0-9]+)/$',
        userena_views.ProfileListView.as_view(),
