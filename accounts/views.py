@@ -9,33 +9,27 @@ from guardian.decorators import permission_required_or_403
 from userena.utils import signin_redirect, get_profile_model, get_user_model
 from userena import settings as userena_settings
 from userena.views import ExtraContextTemplateView
-from userena.views import profile_edit as userena_profile_edit
+from userena.views import profile_edit as userena_profile_edit, profile_detail as userena_profile_detail
 from userena.decorators import secure_required
 
 from .forms import ProfileEditForm
 
-class ProfileDetailView(TemplateView):
-    template_name = userena_settings.USERENA_PROFILE_DETAIL_TEMPLATE
-    
-    def get_context_data(self, username, extra_context=None, *args, **kwargs):
-        context = super(ProfileDetailView, self).get_context_data(*args, **kwargs)
-        
-        user = get_object_or_404(get_user_model(),
-                                 username__iexact=username)
+def profile_detail(request, username):
 
-        # Get profile
-        profile_model = get_profile_model()
-        try:
-            profile = user.get_profile()
-        except profile_model.DoesNotExist:
-            profile = profile_model.objects.create(user=user)
+    extra_context = {}
+    user = get_object_or_404(get_user_model(),
+                             username__iexact=username)
 
-        # Check perms
-        if not profile.can_view_profile(self.request.user):
-            return HttpResponseForbidden(_("You don't have permission to view this profile."))
+    # Get profile
+    profile_model = get_profile_model()
+    profile = user.get_profile()
+    # Check perms
+    if not profile.can_view_profile(request.user):
+        return HttpResponseForbidden(_("You don't have permission to view this profile."))
 
-        # context
-        context['profile'] = profile
-        context['hide_email'] = userena_settings.USERENA_HIDE_EMAIL
+    # context
+    extra_context['profile'] = profile
+    extra_context['hide_email'] = userena_settings.USERENA_HIDE_EMAIL
 
-        return context
+    return userena_profile_detail(request=request, username=username, extra_context=extra_context)
+
