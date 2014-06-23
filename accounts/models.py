@@ -26,7 +26,7 @@ class Profile(UserenaBaseProfile):
     twitter = models.CharField(max_length=100, null=True, blank=True,
                                help_text=_("Your twitter username"))
     
-    skills = TaggableManager()
+    skills = TaggableManager(blank=True,)
 
     @models.permalink
     def get_absolute_url(self):
