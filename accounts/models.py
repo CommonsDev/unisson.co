@@ -59,3 +59,21 @@ def set_guardian_permissions(user=None, profile=None, *args, **kwargs):
     # Give permissions to view and change itself
     for perm in ASSIGNED_PERMISSIONS['user']:
         assign(perm[0], user, user)
+
+
+# Fix for #14 , using http://stackoverflow.com/questions/12142195/django-userena-edit-profile-forbidden
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+@receiver(post_save, sender=User, dispatch_uid='user.created')
+def user_created(sender, instance, created, raw, using, **kwargs):
+  """ Adds 'change_profile' permission to created user objects """
+  if created:
+    from guardian.shortcuts import assign
+    try:
+      profile = instance.get_profile()
+    except:
+      # profile does not exists
+      profile = Profile(user=instance)
+      profile.save()
+      
+    assign('change_profile', instance, profile)
