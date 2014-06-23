@@ -15,7 +15,9 @@ from userena.decorators import secure_required
 from .forms import ProfileEditForm
 
 def profile_detail(request, username):
-
+    """
+        Add extra context and returns userena_profile_detail view
+    """
     extra_context = {}
     user = get_object_or_404(get_user_model(),
                              username__iexact=username)
