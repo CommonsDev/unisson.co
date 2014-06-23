@@ -24,7 +24,15 @@ def lookup_ml_membership(workgroup):
         found_members = User.objects.filter(email__in=emails)
         for found_member in found_members:
             context['ml_member_list'].append(found_member)
-            emails.remove(found_member.email)
+
+            try:
+                emails.remove(found_member.email)
+                
+            except ValueError:
+                # Email is not in list
+                # Added as a hotfix for issue 12
+                pass
+
             # Subscribe the user to the workgroup if not yet
             if found_member not in workgroup.subscribers.all():
                 workgroup.subscribers.add(found_member)
