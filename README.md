@@ -6,7 +6,7 @@ Tools to support "Commons"
 Join list discussion: http://unisson.co/group/unisson
 
 Install App
-===========
+=============
 
 First, you need to setup an isolated developement environment for the
 python apps using virtualenv_. If you don't have virtualenv_, you can
